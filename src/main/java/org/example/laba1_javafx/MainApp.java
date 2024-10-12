@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
+
         // Запускаем первое окно (HelloApplication)
         HelloApplication helloApp = new HelloApplication();
         helloApp.start(primaryStage);
@@ -13,6 +14,10 @@ public class MainApp extends Application {
         // Запускаем второе окно (RestaurantApplication)
         RestaurantApplication restaurantApp = new RestaurantApplication();
         restaurantApp.start(new Stage());
+
+        // Запускаем третье окно (CalculatorApplication)
+        CalculatorApplication calculatorApp = new CalculatorApplication();
+        calculatorApp.start(new Stage());
     }
 
     public static void main(String[] args) {

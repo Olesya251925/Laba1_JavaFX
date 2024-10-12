@@ -89,4 +89,15 @@ public class HelloController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    void onOpenCalculatorClick() {
+        // Код для открытия окна калькулятора
+        try {
+            CalculatorApplication calculatorApp = new CalculatorApplication();
+            calculatorApp.start(new Stage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
