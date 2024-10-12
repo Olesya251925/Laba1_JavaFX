@@ -20,7 +20,7 @@
         <TextField fx:id="outputField" promptText="Результат"/>
     </HBox>
 
-    <VBox alignment="CENTER" spacing="10" >
+    <VBox alignment="CENTER" spacing="10">
         <!-- Добавляем виджеты и чекбоксы -->
         <HBox spacing="10">
             <Label fx:id="label1" text="Виджет 1" />
@@ -35,4 +35,6 @@
             <CheckBox fx:id="checkBox3" onAction="#onCheckBox3Action"/>
         </HBox>
     </VBox>
+
+    <Button text="Открыть ресторан" onAction="#onOpenRestaurantClick" style="-fx-font-family: Arial;"/>
 </VBox>
