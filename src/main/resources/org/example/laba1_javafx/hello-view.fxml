@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
@@ -15,7 +16,23 @@
 
     <HBox spacing="10">
         <TextField fx:id="inputField" promptText="Введите текст"/>
-        <Button fx:id="switchButton" text="->" onAction="#onSwitchButtonClick" prefWidth="40"/>
-        <TextField fx:id="outputField" promptText="Результат" />
+        <Button fx:id="switchButton" text="->" onAction="#onSwitchButtonClick" prefWidth="40" style="-fx-font-family: Arial;"/>
+        <TextField fx:id="outputField" promptText="Результат"/>
     </HBox>
+
+    <VBox alignment="CENTER" spacing="10" >
+        <!-- Добавляем виджеты и чекбоксы -->
+        <HBox spacing="10">
+            <Label fx:id="label1" text="Виджет 1" />
+            <CheckBox fx:id="checkBox1" onAction="#onCheckBox1Action"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label fx:id="label2" text="Виджет 2" />
+            <CheckBox fx:id="checkBox2" onAction="#onCheckBox2Action"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label fx:id="label3" text="Виджет 3" />
+            <CheckBox fx:id="checkBox3" onAction="#onCheckBox3Action"/>
+        </HBox>
+    </VBox>
 </VBox>
