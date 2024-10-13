@@ -38,4 +38,5 @@
 
     <Button text="Открыть ресторан" onAction="#onOpenRestaurantClick" style="-fx-font-family: Arial;"/>
     <Button text="Открыть калькулятор" onAction="#onOpenCalculatorClick" style="-fx-font-family: Arial;"/>
+    <Button text="Открыть флаг" onAction="#onOpenFlagClick" style="-fx-font-family: Arial;"/>
 </VBox>

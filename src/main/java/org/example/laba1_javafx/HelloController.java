@@ -100,4 +100,16 @@ public class HelloController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    void onOpenFlagClick() {
+        // Код для открытия окна флага
+        try {
+            FlagApplication flagApp = new FlagApplication();
+            flagApp.start(new Stage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

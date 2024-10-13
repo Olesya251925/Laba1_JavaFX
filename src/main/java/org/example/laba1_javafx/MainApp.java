@@ -18,6 +18,10 @@ public class MainApp extends Application {
         // Запускаем третье окно (CalculatorApplication)
         CalculatorApplication calculatorApp = new CalculatorApplication();
         calculatorApp.start(new Stage());
+
+        // Запускаем четвертое окно (FlagApplication)
+        FlagApplication flagApp = new FlagApplication();
+        flagApp.start(new Stage());
     }
 
     public static void main(String[] args) {
