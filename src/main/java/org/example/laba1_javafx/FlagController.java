@@ -26,6 +26,7 @@ public class FlagController {
         // Проверяем, что для всех полос выбран цвет
         if (color1 != null && color2 != null && color3 != null) {
             resultLabel.setText("Цвета полос: " + color1 + ", " + color2 + ", " + color3);
+            disableFlags(true); // Блокируем флаги после выбора
         } else {
             resultLabel.setText("Ошибка: Пожалуйста, выберите цвет для всех полос.");
         }
@@ -45,8 +46,22 @@ public class FlagController {
         green3.setSelected(false);
         blue3.setSelected(false);
 
-        // Очищаем результат
+        // Очищаем результат и разблокируем флаги
         resultLabel.setText("Здесь будет результат");
+        disableFlags(false); // Разблокируем флаги для нового выбора
+    }
+
+    // Вспомогательный метод для блокировки или разблокировки флагов
+    private void disableFlags(boolean disable) {
+        red1.setDisable(disable);
+        green1.setDisable(disable);
+        blue1.setDisable(disable);
+        red2.setDisable(disable);
+        green2.setDisable(disable);
+        blue2.setDisable(disable);
+        red3.setDisable(disable);
+        green3.setDisable(disable);
+        blue3.setDisable(disable);
     }
 
     // Вспомогательный метод для получения выбранного цвета из группы RadioButton

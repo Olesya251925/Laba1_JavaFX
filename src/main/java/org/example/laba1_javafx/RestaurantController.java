@@ -32,15 +32,32 @@ public class RestaurantController {
             final int index = i;
             quantityField.setOnKeyReleased(event -> {
                 String text = quantityField.getText();
-                try {
-                    int quantity = Integer.parseInt(text);
-                    if (quantity > 0) {
-                        checkBox.setSelected(true);
-                    } else {
+                if (!text.isEmpty()) { // Проверка, что поле не пустое
+                    try {
+                        int quantity = Integer.parseInt(text);
+                        if (quantity > 0) {
+                            checkBox.setSelected(true);
+                        } else {
+                            showAlert("Введите положительное число!");
+                            quantityField.clear();
+                            checkBox.setSelected(false);
+                        }
+                    } catch (NumberFormatException e) {
+                        showAlert("Введите положительное число!");
+                        quantityField.clear();
                         checkBox.setSelected(false);
                     }
-                } catch (NumberFormatException e) {
-                    checkBox.setSelected(false);
+                } else {
+                    checkBox.setSelected(false); // Сбрасываем чекбокс, если поле пустое
+                }
+            });
+
+            // Обработчик для чекбокса
+            checkBox.setOnAction(event -> {
+                if (checkBox.isSelected()) {
+                    quantityField.setText("1"); // Устанавливаем значение "1"
+                } else {
+                    quantityField.clear(); // Очищаем поле, если чекбокс снят
                 }
             });
 
@@ -92,6 +109,14 @@ public class RestaurantController {
         alert.setTitle("Чек");
         alert.setHeaderText(null);
         alert.setContentText(receipt.toString());
+        alert.showAndWait();
+    }
+
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Неверный ввод");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
         alert.showAndWait();
     }
 }
